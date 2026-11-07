@@ -8,7 +8,7 @@
 
 ## 配置与部署
 
-您可以使用 [docker-compose](https://docs.docker.com/compose/install/standalone/) 部署 Embykeeper.
+您可以使用 [docker-compose](https://docs.docker.com/compose/install/standalone/) 部署 EmbyKeeperPlus.
 
 ::: warning 注意
 您需要先进行过 [通过 Docker 部署](/guide/Linux-Docker-部署) 才能通过 Docker Compose 部署.
@@ -74,7 +74,7 @@ docker-compose up -d
 由于我们没有使用 `docker run` 命令中使用的 `-i` 参数, 启动时将不会运行一次任务, 而是仅作为计划任务运行.
 :::
 
-恭喜您！您已经通过 Docker Compose 成功部署了 Embykeeper.
+恭喜您！您已经通过 Docker Compose 成功部署了 EmbyKeeperPlus.
 
 ::: info 支持
 
@@ -105,7 +105,7 @@ docker-compose up -d
 
 ## 自动版本更新
 
-您可以使用 [watchtower](https://github.com/containrrr/watchtower) 来自动更新 Embykeeper 的 Docker 镜像.
+您可以使用 [watchtower](https://github.com/containrrr/watchtower) 来自动更新 EmbyKeeperPlus 的 Docker 镜像.
 
 在您的 `docker-compose.yml` 中添加 watchtower 服务：
 
@@ -154,7 +154,7 @@ services:
 
 ## 命令行参数
 
-Embykeeper 支持多样化的 [**⌨️ 命令行参数**](/guide/命令行参数).
+EmbyKeeperPlus 支持多样化的 [**⌨️ 命令行参数**](/guide/命令行参数).
 
 <!-- #region command -->
 
@@ -179,7 +179,7 @@ services:
 
 ## 修改程序源码, 并用 Docker Compose 运行
 
-Embykeeper 提供 `dev` 系列镜像, 您需要新建一个文件 `docker-compose.yml`:
+EmbyKeeperPlus 提供 `dev` 系列镜像, 您需要新建一个文件 `docker-compose.yml`:
 
 ```yaml
 version: '3'
@@ -212,7 +212,7 @@ docker-compose up -d
 
 ::::
 
-欢迎您在实现签到器后, 通过 [Pull requests](https://github.com/emby-keeper/emby-keeper/pulls) 向 Embykeeper 分享你的成果.
+欢迎您在实现签到器后, 通过 [Pull requests](https://github.com/zyh778/embykeeperplus/pulls) 向 EmbyKeeperPlus 分享你的成果.
 
 ## 部署在线控制台 (旧版)
 

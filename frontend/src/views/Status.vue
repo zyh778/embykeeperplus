@@ -30,7 +30,7 @@ const statusEndpoint = ref<string | null>('/sse/status')
 
 const backendBadge = computed(() => backend.value.running ? 'success' : 'warning')
 const backendLabel = computed(() => backend.value.running ? '运行中' : '已停止')
-const statusHeadline = computed(() => 'Embykeeper')
+const statusHeadline = computed(() => 'EmbyKeeperPlus')
 const statusDescription = computed(() => backend.value.running ? '当前正在运行。' : '当前尚未启动。')
 const backendOutput = computed<string[]>(() => (backend.value?.recent_output || []).filter((line: string) => !line.startsWith('$ ')))
 const activeTerminalLines = computed<string[]>(() => backendOutput.value)
@@ -52,9 +52,9 @@ const coloredTerminalHtml = computed(() => {
     if (safe.includes(' INFO ') || safe.startsWith('INFO') || safe.includes('] INFO')) {
       return safe
         .replace(/INFO/g, '<span class="text-sky-300">INFO</span>')
-        .replace(/Embykeeper/g, '<span class="text-emerald-300">Embykeeper</span>')
+        .replace(/EmbyKeeperPlus/g, '<span class="text-emerald-300">EmbyKeeperPlus</span>')
     }
-    return safe.replace(/Embykeeper/g, '<span class="text-emerald-300">Embykeeper</span>')
+    return safe.replace(/EmbyKeeperPlus/g, '<span class="text-emerald-300">EmbyKeeperPlus</span>')
   }).join('\n')
 })
 
@@ -155,7 +155,7 @@ onBeforeUnmount(() => {
       <div class="space-y-5 px-4 py-5 sm:space-y-6 sm:px-6 sm:py-6 xl:px-8">
         <div class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-primary-100 backdrop-blur-sm">
           <CpuChipIcon class="h-4 w-4" aria-hidden="true" />
-          Embykeeper
+          EmbyKeeperPlus
         </div>
 
         <div class="flex flex-col gap-4 xl:flex-row xl:items-end xl:justify-between">
@@ -175,7 +175,7 @@ onBeforeUnmount(() => {
               @click="handleAction('start')"
             >
               <PlayCircleIcon class="mr-2 h-4 w-4" aria-hidden="true" />
-              启动 Embykeeper
+              启动 EmbyKeeperPlus
             </UiButton>
             <template v-else>
               <UiButton
@@ -184,7 +184,7 @@ onBeforeUnmount(() => {
                 @click="handleAction('restart')"
               >
                 <ArrowPathIcon class="mr-2 h-4 w-4" aria-hidden="true" />
-                重启 Embykeeper
+                重启 EmbyKeeperPlus
               </UiButton>
               <UiButton
                 variant="danger"
@@ -192,7 +192,7 @@ onBeforeUnmount(() => {
                 @click="handleAction('stop')"
               >
                 <StopCircleIcon class="mr-2 h-4 w-4" aria-hidden="true" />
-                停止 Embykeeper
+                停止 EmbyKeeperPlus
               </UiButton>
             </template>
             <UiButton variant="outline" :loading="loading" @click="fetchStatus">

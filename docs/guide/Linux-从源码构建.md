@@ -5,7 +5,7 @@
 需要 Python 3.8 及以上版本和 Node.js 20。拉取源码并构建界面：
 
 ```bash
-git clone https://github.com/emby-keeper/emby-keeper.git
+git clone https://github.com/zyh778/embykeeperplus.git
 cd emby-keeper
 corepack enable
 corepack prepare pnpm@9.15.9 --activate
@@ -41,14 +41,14 @@ embykeeper web --host 127.0.0.1
 或 [**🖥️ 面板模式部署 (推荐)**](/guide/面板模式部署).
 :::
 
-Embykeeper 可以从源码构建, 首先请拉取并设置环境:
+EmbyKeeperPlus 可以从源码构建, 首先请拉取并设置环境:
 
 ```bash
-git clone https://github.com/emby-keeper/emby-keeper.git
+git clone https://github.com/zyh778/embykeeperplus.git
 make install && make run
 ```
 
-命令将会在 `embykeeper` 目录下生成模板 `config.toml` 文件 (您也可以从[这里](https://github.com/emby-keeper/emby-keeper/blob/main/config.example.toml)下载).
+命令将会在 `embykeeper` 目录下生成模板 `config.toml` 文件 (您也可以从[这里](https://github.com/zyh778/embykeeperplus/blob/main/config.example.toml)下载).
 
 <!--@include: ./_简要配置.md-->
 
@@ -58,9 +58,9 @@ make install && make run
 make run
 ```
 
-您将被询问设备验证码以登录, 登录成功后, Embykeeper 将首先执行一次签到和保活, 此后每日进行一次签到和保活.
+您将被询问设备验证码以登录, 登录成功后, EmbyKeeperPlus 将首先执行一次签到和保活, 此后每日进行一次签到和保活.
 
-恭喜您！您已经成功构建了 Embykeeper.
+恭喜您！您已经成功构建了 EmbyKeeperPlus.
 
 ::: info 支持
 
@@ -78,7 +78,7 @@ make run
 make systemd
 ```
 
-这将在 `~/.config/systemd/user` 中创建服务, 使 Embykeeper 在用户登录时自动启动.
+这将在 `~/.config/systemd/user` 中创建服务, 使 EmbyKeeperPlus 在用户登录时自动启动.
 
 ## 版本更新
 

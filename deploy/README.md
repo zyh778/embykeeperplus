@@ -1,4 +1,4 @@
-# 部署目录
+# EmbyKeeperPlus 部署目录
 
 本目录集中存放所有 Docker 部署文件, 按 **新版 / 旧版 / 云平台** 三组区分:
 
@@ -20,7 +20,7 @@
   docker compose up -d
   ```
 
-- 镜像名: `embykeeper/embykeeper`，默认启动网页管理，对外端口 8000，无需设置 `command`。
+- 默认兼容镜像名: `embykeeper/embykeeper`；源码部署可执行 `docker compose up -d --build`，容器名为 `embykeeperplus-panel`。
 - 正式版 Action 构建 `panel/Dockerfile` 的 `release` 目标；开发版构建 `editable` 目标，均包含前端。
 
 ## legacy/ — 旧版

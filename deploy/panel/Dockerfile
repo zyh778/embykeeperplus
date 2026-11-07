@@ -1,6 +1,6 @@
-# Embykeeper 正式镜像 (命令行与网页管理)
+# EmbyKeeperPlus 正式镜像 (命令行与网页管理)
 #
-# 内容: Embykeeper 业务后端 + 面板 API (embykeeperapi) + 已构建的面板界面
+# 内容: EmbyKeeperPlus 业务后端 + 面板 API (embykeeperapi) + 已构建的面板界面
 # 用途: 单容器提供「界面 + API + 计划任务」, 无需命令行登录, 无需额外 Web 服务器
 #
 # 旧版 (命令行镜像 + embykeeperweb 在线控制台) 请使用 deploy/legacy/Dockerfile.

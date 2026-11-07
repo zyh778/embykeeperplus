@@ -297,7 +297,7 @@ def start_proc(instant=False):
     atexit.register(exit_handler)
     app.config["fd"] = master_fd
     app.config["proc"] = p
-    logger.debug(f"Embykeeper started at: {p.pid}.")
+    logger.debug(f"EmbyKeeperPlus started at: {p.pid}.")
     socketio.start_background_task(target=read_and_forward_pty_output)
 
 
@@ -345,7 +345,7 @@ def kill_proc(proc: Popen):
         if proc.poll() is None:
             proc.kill()
             proc.wait()
-        logger.debug(f"Embykeeper killed: {proc.pid}.")
+        logger.debug(f"EmbyKeeperPlus killed: {proc.pid}.")
     except Exception as e:
         logger.error(f"Error killing process: {e}")
 
@@ -386,7 +386,7 @@ def run(
         ek_config.mongodb = app.config["mongodb"]
     if not wait:
         start_proc(instant=True)
-    logger.info(f"Embykeeper webserver started at {host}:{port} with prefix {prefix or '/'}")
+    logger.info(f"EmbyKeeperPlus webserver started at {host}:{port} with prefix {prefix or '/'}")
     socketio.run(app, port=port, host=host, debug=debug)
 
 

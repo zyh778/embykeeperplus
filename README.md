@@ -1,8 +1,8 @@
-[![build status](https://img.shields.io/github/actions/workflow/status/emby-keeper/emby-keeper/ci.yml?branch=main)](https://github.com/emby-keeper/emby-keeper/commits/main) [![pypi badge](https://img.shields.io/pypi/v/embykeeper)](https://pypi.org/project/embykeeper/) [![docker](https://img.shields.io/docker/v/embykeeper/embykeeper?label=docker)](https://hub.docker.com/r/embykeeper/embykeeper) [![docker pulls](https://img.shields.io/docker/pulls/embykeeper/embykeeper?label=pulls)](https://hub.docker.com/r/embykeeper/embykeeper) [![license badge](https://img.shields.io/github/license/emby-keeper/emby-keeper)](https://github.com/emby-keeper/emby-keeper/blob/main/LICENSE) [![telegram badge](https://img.shields.io/badge/telegram-bot-blue)](https://t.me/embykeeper_bot) [![telegram badge](https://img.shields.io/badge/telegram-channel-green)](https://t.me/embykeeper) [![telegram badge](https://img.shields.io/badge/telegram-group-violet)](https://t.me/embykeeperchat)
+[![build status](https://img.shields.io/github/actions/workflow/status/zyh778/embykeeperplus/ci.yml?branch=main)](https://github.com/zyh778/embykeeperplus/commits/main) [![pypi badge](https://img.shields.io/pypi/v/embykeeperplus)](https://pypi.org/project/embykeeperplus/) [![docker](https://img.shields.io/docker/v/embykeeper/embykeeper?label=docker)](https://hub.docker.com/r/embykeeper/embykeeper) [![docker pulls](https://img.shields.io/docker/pulls/embykeeper/embykeeper?label=pulls)](https://hub.docker.com/r/embykeeper/embykeeper) [![license badge](https://img.shields.io/github/license/zyh778/embykeeperplus)](https://github.com/zyh778/embykeeperplus/blob/main/LICENSE) [![telegram badge](https://img.shields.io/badge/telegram-bot-blue)](https://t.me/embykeeper_bot) [![telegram badge](https://img.shields.io/badge/telegram-channel-green)](https://t.me/embykeeper) [![telegram badge](https://img.shields.io/badge/telegram-group-violet)](https://t.me/embykeeperchat)
 
 <p align="center">
-  <a href='https://github.com/emby-keeper/emby-keeper'>
-    <img src="https://github.com/emby-keeper/emby-keeper/raw/main/images/logo.svg" alt="Embykeeper" />
+  <a href='https://github.com/zyh778/embykeeperplus'>
+    <img src="https://github.com/zyh778/embykeeperplus/raw/main/images/logo.svg" alt="EmbyKeeperPlus" />
   </a>
 </p>
 <p align="center">
@@ -13,13 +13,13 @@
 
 ## 功能
 
-Embykeeper 是一个 Emby 影视服务器签到保号的自动执行工具, 它主要提供两大核心功能:
+EmbyKeeperPlus 是一个 Emby 影视服务器签到保号的自动执行工具, 它主要提供两大核心功能:
 
 1. **TG 机器人签到** - 可以自动完成 50+ 站点的 Telegram 机器人每日签到, 以获取积分.
 
 2. **Emby 保号** - 通过模拟登录和播放视频, 定期保持 Emby 账号的活跃状态, 支持任何 Emby 站点.
 
-除此之外, Embykeeper 还提供了一些额外功能：
+除此之外, EmbyKeeperPlus 还提供了一些额外功能：
 
 1. **自动抢注** - 监听邀请码发码信息和开放注册信息, 并自动抢注.
 
@@ -33,23 +33,23 @@ Embykeeper 是一个 Emby 影视服务器签到保号的自动执行工具, 它�
 
 ## 声明
 
-本项目涉及的一切 Emby 服务器与 Embykeeper 开发团队无关, 在使用 Embykeeper 时造成的一切损失 (包括但不限于 Emby 或 Telegram 账号被封禁或被群封禁) 与开发团队无关. 为了您的账号安全, 推荐使用小号. 运行该工具的 Telegram 账号若通过接码注册, 请使用一段时间再接入本工具.
+本项目涉及的一切 Emby 服务器与 EmbyKeeperPlus 开发团队无关, 在使用 EmbyKeeperPlus 时造成的一切损失 (包括但不限于 Emby 或 Telegram 账号被封禁或被群封禁) 与开发团队无关. 为了您的账号安全, 推荐使用小号. 运行该工具的 Telegram 账号若通过接码注册, 请使用一段时间再接入本工具.
 
 本项目设计初衷是在中文 Emby 社群规则下, 保号要求逐渐苛刻 (部分要求每月登录或每日签到), 这使得休闲时间紧张的人士难以安心使用. 本项目仅旨在帮助该类人群保号, 不鼓励持有大量 Emby 账号而不使用, 导致真正需要的人、为中文影视资源分享和翻译有贡献的人难以获得账号的行为, 开发团队也呼吁仅保留 1-2 个较全面质量较高的 Emby 服务器. 本项目仅提供工具, 具体使用形式及造成的影响和后果与开发团队无关.
 
-Embykeeper 将自动向 Embykeeper Auth Bot ([@embykeeper_auth_bot](https://t.me/embykeeper_auth_bot))" 发送信息, 用于在线验证码解析、日志记录、用户验证等, 内容不含任何密码或密钥信息, 或其他敏感隐私信息.
+EmbyKeeperPlus 将自动向 Embykeeper Auth Bot ([@embykeeper_auth_bot](https://t.me/embykeeper_auth_bot))" 发送信息, 用于在线验证码解析、日志记录、用户验证等, 内容不含任何密码或密钥信息, 或其他敏感隐私信息.
 
 当您安装并使用该工具, 默认您已经阅读并同意上述声明, 并确认自己并非出于"集邮"目的而安装.
 
 ## 安装与使用
 
-Embykeeper 支持 Docker、PyPI 与 Windows 安装包, 也支持云部署, 请点击下方按钮开始部署:
+EmbyKeeperPlus 支持 Docker、PyPI 与 Windows 安装包, 也支持云部署, 请点击下方按钮开始部署:
 
-[![Setup Tutorial](https://github.com/emby-keeper/emby-keeper/raw/main/images/setup-button.svg)](https://emby-keeper.github.io/guide/安装指南)
+[![Setup Tutorial](https://github.com/zyh778/embykeeperplus/raw/main/images/setup-button.svg)](https://emby-keeper.github.io/guide/安装指南)
 
 若您没有服务器, 您可以通过免费托管平台进行部署, 点击下方按钮开始部署:
 
-[![Deploy to Huggingface Space](https://github.com/emby-keeper/emby-keeper/raw/main/images/deploy-to-hf.svg)](https://huggingface.co/spaces/ekuser/ek?duplicate=true)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Tutorial](https://github.com/emby-keeper/emby-keeper/raw/main/images/hf-tutorial.svg)](https://blog.zetx.tech/2024/05/19/embykeeper-hf-tutorial/)
+[![Deploy to Huggingface Space](https://github.com/zyh778/embykeeperplus/raw/main/images/deploy-to-hf.svg)](https://huggingface.co/spaces/ekuser/ek?duplicate=true)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Tutorial](https://github.com/zyh778/embykeeperplus/raw/main/images/hf-tutorial.svg)](https://blog.zetx.tech/2024/05/19/embykeeper-hf-tutorial/)
 
 Windows 用户可以使用 [Windows 面板安装](https://emby-keeper.github.io/guide/Windows-面板安装)。
 
@@ -69,7 +69,7 @@ docker run -d --name embykeeper-panel \
 
 如果服务器或平台没有持久磁盘 (例如 Koyeb、Render 免费层), 加上 `-e EK_MONGODB='mongodb://用户名:密码@主机:27017/embykeeper'` 即可把配置、缓存与界面设置都保存在 MongoDB, 重新部署不会丢数据.
 
-**注意**: 由于近期 Telegram 风控等级上升, 请尽可能先使用服务器所在地区的代理在手机上先登陆一次, 再使用 Embykeeper.
+**注意**: 由于近期 Telegram 风控等级上升, 请尽可能先使用服务器所在地区的代理在手机上先登陆一次, 再使用 EmbyKeeperPlus.
 
 若您更习惯命令行模式, 可以使用旧版的 [Docker 部署](https://emby-keeper.github.io/guide/Linux-Docker-部署):
 
@@ -81,11 +81,11 @@ docker run -v $(pwd)/embykeeper:/app --rm -it --net=host embykeeper/embykeeper -
 
 更多安装和配置方面的帮助请参考 [**📖 教程文档**](https://emby-keeper.github.io/).
 
-本项目欢迎友善讨论与建议, 您可以通过 [Github Issue](https://github.com/emby-keeper/emby-keeper) 途径反馈, 并认可开发团队可以关闭与项目开发不直接相关的不友善讨论. 您也可以通过 [Telegram 讨论群](https://t.me/embykeeper_chat_bot) 获得社区帮助.
+本项目欢迎友善讨论与建议, 您可以通过 [Github Issue](https://github.com/zyh778/embykeeperplus) 途径反馈, 并认可开发团队可以关闭与项目开发不直接相关的不友善讨论. 您也可以通过 [Telegram 讨论群](https://t.me/embykeeper_chat_bot) 获得社区帮助.
 
 ## 运行截图
 
-![Screenshot](https://github.com/emby-keeper/emby-keeper/raw/main/images/screenshot.png)
+![Screenshot](https://github.com/zyh778/embykeeperplus/raw/main/images/screenshot.png)
 
 ## 完整功能支持列表
 
@@ -309,7 +309,7 @@ docker run -v $(pwd)/embykeeper:/app --rm -it --net=host embykeeper/embykeeper -
 
 **注意**: 部分功能由于涉及竞争条件和付费验证码解析服务等, 仅有[高级用户](https://emby-keeper.github.io/guide/高级用户)才能使用, 您需要共享邀请码或[赞助项目](https://afdian.com/a/jackzzs)以成为永久有效期的高级用户.
 
-## 支持 Embykeeper
+## 支持 EmbyKeeperPlus
 
 ##### 开发者团队
 
@@ -318,4 +318,4 @@ docker run -v $(pwd)/embykeeper:/app --rm -it --net=host embykeeper/embykeeper -
 
 ##### 通过[爱发电](https://afdian.com/a/jackzzs)赞助
 
-![Kitty](https://github.com/emby-keeper/emby-keeper/raw/main/images/kitty.gif)
+![Kitty](https://github.com/zyh778/embykeeperplus/raw/main/images/kitty.gif)

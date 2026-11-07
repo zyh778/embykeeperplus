@@ -1,9 +1,9 @@
 services:
   - type: web
-    name: embykeeper
+    name: embykeeperplus
     runtime: docker
     plan: free
-    branch: stable
+    branch: main
     dockerfilePath: ./deploy/cloud/Dockerfile
     dockerContext: ./deploy/cloud/
     healthCheckPath: /healthz

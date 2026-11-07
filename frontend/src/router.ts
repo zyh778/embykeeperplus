@@ -8,6 +8,7 @@ import Subsonic from './views/Subsonic.vue'
 import Runinfo from './views/Runinfo.vue'
 import Sites from './views/Sites.vue'
 import Settings from './views/Settings.vue'
+import ConfigWizard from './views/ConfigWizard.vue'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -36,6 +37,8 @@ const router = createRouter({
     { path: '/runinfo', component: Runinfo, meta: { requiresAuth: true } },
     { path: '/sites', component: Sites, meta: { requiresAuth: true } },
     { path: '/settings', component: Settings, meta: { requiresAuth: true } },
+    { path: '/configurator', component: ConfigWizard, meta: { requiresAuth: true } },
+    { path: '/config', redirect: '/configurator' },
   ]
 })
 

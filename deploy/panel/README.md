@@ -1,4 +1,4 @@
-# 网页管理部署
+# EmbyKeeperPlus 网页管理部署
 
 用户安装步骤见 [面板模式部署](../../docs/guide/面板模式部署.md)。
 
@@ -15,15 +15,15 @@ docker compose up -d
 
 ## 发布与维护
 
-正式镜像为 `embykeeper/embykeeper`，默认启动网页管理，无需设置 `command`。显式传入命令行参数时，仍可使用原有命令行与旧在线控制台入口。
+正式镜像默认兼容使用 `embykeeper/embykeeper`；从本仓库源码部署时可以直接运行 `docker compose up -d --build`，构建出的容器名为 `embykeeperplus-panel`。显式传入命令行参数时，仍可使用原有命令行与旧在线控制台入口。
 
 `docker.yml` 构建本目录 Dockerfile 的 `release` 目标；`docker-dev.yml` 构建 `editable` 目标。两者均包含已构建的前端，保留原有镜像名称、版本标签和 amd64/arm64 发布流程。
 
 维护者在仓库根目录构建：
 
 ```bash
-docker build -f deploy/panel/Dockerfile --target release -t embykeeper/embykeeper:local .
-docker build -f deploy/panel/Dockerfile --target editable -t embykeeper/embykeeper:local-dev .
+docker build -f deploy/panel/Dockerfile --target release -t embykeeperplus:local .
+docker build -f deploy/panel/Dockerfile --target editable -t embykeeperplus:local-dev .
 ```
 
 开发镜像需要挂载源码到 `/src`。

@@ -1,9 +1,9 @@
 {
-    "name": "Embykeeper",
+    "name": "EmbyKeeperPlus",
     "description": "中文社群规则下用于 Emby 影视服务器签到和保号的自动执行工具",
     "keywords": ["telegram", "emby", "checkin"],
-    "website": "https://github.com/emby-keeper/emby-keeper",
-    "repository": "https://github.com/emby-keeper/emby-keeper",
+    "website": "https://github.com/zyh778/embykeeperplus",
+    "repository": "https://github.com/zyh778/embykeeperplus",
     "success_url": "/",
     "env": {
       "EK_WEBPASS": {

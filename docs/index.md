@@ -2,10 +2,10 @@
 head:
   - - meta
     - name: description
-      content: Embykeeper 是一个Emby 影视服务器签到保号的自动执行工具, 提供 TG 机器人签到和 Emby 服务器保活功能.
+      content: EmbyKeeperPlus 是一个Emby 影视服务器签到保号的自动执行工具, 提供 TG 机器人签到和 Emby 服务器保活功能.
   - - meta
     - name: keywords
-      content: Embykeeper, Emby, 签到, 保活, Telegram, 公益服
+      content: EmbyKeeperPlus, Emby, 签到, 保活, Telegram, 公益服
   - - meta
     - name: google-site-verification
       content: 2Rwsm1-SrtpbMLAgt249LnzWKqx2bbuNVuE-5LiU4dc
@@ -14,15 +14,15 @@ head:
 layout: home
 
 hero:
-  name: 'Embykeeper'
+  name: 'EmbyKeeperPlus'
   text: 'Emby 保号自动化'
   tagline: Emby 保活 + TG 签到
   image:
     src: /logo.webp
-    alt: Embykeeper
+    alt: EmbyKeeperPlus
   actions:
     - theme: brand
-      text: Embykeeper 是什么?
+      text: EmbyKeeperPlus 是什么?
       link: /guide/
     - theme: alt
       text: 快速安装
@@ -32,7 +32,7 @@ hero:
       link: /guide/配置文件
     - theme: alt
       text: Github
-      link: https://github.com/emby-keeper/emby-keeper
+      link: https://github.com/zyh778/embykeeperplus
 
 features:
   - icon:

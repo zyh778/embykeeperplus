@@ -13,7 +13,8 @@ import {
   ChartBarIcon,
   PuzzlePieceIcon,
   Cog6ToothIcon,
-  ArrowRightOnRectangleIcon
+  ArrowRightOnRectangleIcon,
+  ClipboardDocumentListIcon,
 } from '@heroicons/vue/24/outline'
 
 const authStore = useAuthStore()
@@ -29,6 +30,7 @@ const navigation = [
   { name: '任务记录', href: '/runinfo', icon: ChartBarIcon },
   { name: '自定义站点', href: '/sites', icon: PuzzlePieceIcon },
   { name: '系统设置', href: '/settings', icon: Cog6ToothIcon },
+  { name: '配置向导', href: '/configurator', icon: ClipboardDocumentListIcon },
 ]
 
 const isLoginPage = computed(() => route.path === '/login')
@@ -66,7 +68,7 @@ const logout = async () => {
               <!-- Mobile Sidebar -->
               <div class="flex grow flex-col gap-y-5 overflow-y-auto bg-white px-6 pb-4 shadow-2xl shadow-slate-900/10">
                 <div class="flex h-16 shrink-0 items-center justify-center pt-4">
-                  <img class="h-10 w-auto" src="/assets/img/illustrations/logo-only.svg" alt="EmbyKeeper" />
+                  <img class="h-10 w-auto" src="/assets/img/illustrations/logo-only.svg" alt="EmbyKeeperPlus" />
                 </div>
                 <nav class="flex flex-1 flex-col mt-4">
                   <ul role="list" class="flex flex-1 flex-col gap-y-7">
@@ -99,8 +101,8 @@ const logout = async () => {
     <div class="hidden xl:fixed xl:inset-y-0 xl:z-50 xl:flex xl:w-72 xl:flex-col border-r border-slate-200/80 bg-white/90 backdrop-blur-sm">
       <div class="flex grow flex-col gap-y-5 overflow-y-auto bg-transparent px-6 pb-4">
         <div class="flex h-16 shrink-0 items-center gap-3 pt-6 pb-2">
-          <img class="h-10 w-auto" src="/assets/img/illustrations/logo-only.svg" alt="EmbyKeeper" />
-          <span class="text-xl font-bold text-gray-900 tracking-tight">EmbyKeeper</span>
+          <img class="h-10 w-auto" src="/assets/img/illustrations/logo-only.svg" alt="EmbyKeeperPlus" />
+          <span class="text-xl font-bold text-gray-900 tracking-tight">EmbyKeeperPlus</span>
         </div>
         <nav class="flex flex-1 flex-col mt-4">
           <ul role="list" class="flex flex-1 flex-col gap-y-7">
@@ -133,7 +135,7 @@ const logout = async () => {
           <span class="sr-only">打开导航菜单</span>
           <Bars3Icon class="h-6 w-6" aria-hidden="true" />
         </button>
-        <div class="flex-1 text-sm font-semibold leading-6 text-gray-900">EmbyKeeper</div>
+        <div class="flex-1 text-sm font-semibold leading-6 text-gray-900">EmbyKeeperPlus</div>
       </div>
 
       <main class="min-h-0 min-w-0 flex-1 overflow-y-auto">

@@ -621,7 +621,7 @@ Promise.all([
 <template>
   <div class="space-y-8" :class="{ 'pb-44 sm:pb-28': hasDirtySections }">
     <section class="overflow-hidden rounded-[30px] border border-slate-200/80 bg-gradient-to-br from-white via-slate-50 to-slate-100 shadow-[0_20px_60px_-32px_rgba(15,23,42,0.35)]">
-      <div class="flex min-w-0 flex-col gap-4 px-4 py-5 sm:px-6 sm:py-6 xl:px-8">
+      <div class="flex min-w-0 flex-col gap-4 px-4 py-5 sm:px-6 sm:py-6 xl:flex-row xl:items-end xl:justify-between xl:px-8">
         <div class="max-w-2xl space-y-2">
           <p class="text-xs font-semibold uppercase tracking-[0.22em] text-primary-600">System Settings</p>
           <div>
@@ -629,6 +629,9 @@ Promise.all([
             <p class="mt-2 text-sm leading-6 text-slate-600">调整系统运行、通知、任务调度和网络代理等全局设置。</p>
           </div>
         </div>
+        <router-link to="/configurator" class="inline-flex shrink-0 items-center justify-center rounded-2xl bg-slate-950 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2">
+          打开全量配置向导
+        </router-link>
       </div>
     </section>
 

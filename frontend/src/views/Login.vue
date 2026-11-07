@@ -27,7 +27,7 @@ const submit = async () => {
 <template>
   <div class="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 bg-gray-50">
     <div class="sm:mx-auto sm:w-full sm:max-w-sm">
-      <img class="mx-auto h-12 w-auto" src="/assets/img/illustrations/logo-only.svg" alt="EmbyKeeper" />
+      <img class="mx-auto h-12 w-auto" src="/assets/img/illustrations/logo-only.svg" alt="EmbyKeeperPlus" />
       <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">登录</h2>
     </div>
 

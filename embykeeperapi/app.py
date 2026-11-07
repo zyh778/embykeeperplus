@@ -29,7 +29,7 @@ from .settings_router import router as settings_router
 from .state_store import check_mongodb
 from .events import register_broadcast_loop, reset_shutdown_event, signal_shutdown, signal_shutdown_async
 
-cli = typer.Typer(help="Embykeeper Panel API server")
+cli = typer.Typer(help="EmbyKeeperPlus Panel API server")
 STARTED_AT = datetime.now(timezone.utc)
 logger = logging.getLogger("uvicorn.error")
 TARGET_HOST_ENV = "EMBYKEEPERAPI_TARGET_HOST"
@@ -260,7 +260,7 @@ def build_app(allow_origins: List[str] = None) -> FastAPI:
     @app.get("/api/panel/health")
     async def panel_health(_: bool = Depends(require_auth)):
         return {
-            "name": "embykeeper-panel",
+            "name": "embykeeperplus-panel",
             "version": __version__,
             "pid": os.getpid(),
             "started_at": STARTED_AT.isoformat(),
@@ -285,7 +285,7 @@ def build_app(allow_origins: List[str] = None) -> FastAPI:
         @app.get("/")
         async def root():
             return {
-                "message": "Embykeeper Panel API",
+                "message": "EmbyKeeperPlus Panel API",
                 "version": __version__,
             }
 

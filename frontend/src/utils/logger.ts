@@ -4,7 +4,7 @@
  * plug in a remote error-tracking service if needed.
  */
 
-const PREFIX = '[EmbyKeeper]'
+const PREFIX = '[EmbyKeeperPlus]'
 
 export const logger = {
   error(message: string, context?: unknown): void {

@@ -2,7 +2,7 @@
 
 ## 安装并用网页管理
 
-Embykeeper 可以在 `python >= 3.8` 运行. 建议使用 [virtualenv](https://virtualenv.pypa.io/) 进行环境管理和包安装:
+EmbyKeeperPlus 可以在 `python >= 3.8` 运行. 建议使用 [virtualenv](https://virtualenv.pypa.io/) 进行环境管理和包安装:
 
 ```bash
 python -m venv embykeeper-venv
@@ -34,13 +34,13 @@ pip install -U embykeeper
 或 [**🖥️ 面板模式部署 (推荐)**](/guide/面板模式部署).
 :::
 
-已经安装 Embykeeper 后, 不设置 `EK_WEBPASS`, 直接执行:
+已经安装 EmbyKeeperPlus 后, 不设置 `EK_WEBPASS`, 直接执行:
 
 ```bash
 embykeeper -i
 ```
 
-命令将会在 `embykeeper` 目录下生成模板 `config.toml` 文件 (您也可以从[这里](https://github.com/emby-keeper/emby-keeper/blob/main/config.example.toml)下载).
+命令将会在 `embykeeper` 目录下生成模板 `config.toml` 文件 (您也可以从[这里](https://github.com/zyh778/embykeeperplus/blob/main/config.example.toml)下载).
 
 <!--@include: ./_简要配置.md-->
 
@@ -50,9 +50,9 @@ embykeeper -i
 embykeeper -i
 ```
 
-您将被询问设备验证码以登录, 登录成功后, Embykeeper 将首先执行一次签到和保活, 此后每日进行一次签到和保活.
+您将被询问设备验证码以登录, 登录成功后, EmbyKeeperPlus 将首先执行一次签到和保活, 此后每日进行一次签到和保活.
 
-恭喜您！您已经成功安装了 Embykeeper.
+恭喜您！您已经成功安装了 EmbyKeeperPlus.
 
 ::: info 支持
 
@@ -62,7 +62,7 @@ embykeeper -i
 
 ## 后台运行
 
-为了让 Embykeeper 长期后台运行, 您可以通过 `Ctrl + C` 停止, 然后运行:
+为了让 EmbyKeeperPlus 长期后台运行, 您可以通过 `Ctrl + C` 停止, 然后运行:
 
 ```bash
 tmux

@@ -3,7 +3,7 @@ requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "embykeeper"
+name = "embykeeperplus"
 version = "8.1.1"
 authors = [
     {name = "jackzzs", email = "jackzzs@outlook.com"},
@@ -37,7 +37,7 @@ requires-python = ">=3.8"
 dynamic = ["dependencies"]
 
 [project.urls]
-Homepage = "https://github.com/emby-keeper/emby-keeper"
+Homepage = "https://github.com/zyh778/embykeeperplus"
 
 [project.readme]
 file = "README.md"
@@ -45,6 +45,7 @@ content-type = "text/markdown"
 
 [project.scripts]
 embykeeper = "embykeeper.cli:app"
+embykeeperplus = "embykeeper.cli:app"
 embykeeperweb = "embykeeperweb.app:cli"
 embykeeperapi = "embykeeperapi.app:cli"
 

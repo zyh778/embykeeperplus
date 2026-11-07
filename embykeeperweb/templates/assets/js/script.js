@@ -59,7 +59,7 @@
       text-align: center;
       padding: 20px;
     `;
-    message.innerHTML = `Embykeeper 已启动, 您需要打开 ${redirectUrl} (点此复制) 以继续`;
+    message.innerHTML = `EmbyKeeperPlus 已启动, 您需要打开 ${redirectUrl} (点此复制) 以继续`;
 
     overlay.appendChild(message);
     document.body.appendChild(overlay);

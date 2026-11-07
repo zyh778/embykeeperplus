@@ -40,6 +40,24 @@ function scope(value = null) {
   return { ...component, updates }
 }
 
+// 创建配置向导脚本实例，验证整份草稿的序列化和步骤回退行为。
+function configWizard() {
+  return loadSetup('views/ConfigWizard.vue', [
+    'configSource', 'syncDraft', 'buildPayload', 'draftSnapshot', 'validateStep', 'jumpToStep', 'canLeave',
+    'activeStep', 'initialSnapshot', 'saving', 'embyAccounts', 'telegramAccounts', 'notifier', 'proxy', 'siteScopes',
+  ], {
+    useAuthStore: () => ({ request: async () => ({}) }),
+    onMounted() {},
+    onBeforeUnmount() {},
+    onBeforeRouteLeave() {},
+    window: { confirm: () => false, addEventListener() {}, removeEventListener() {} },
+    logger: { error() {}, message: (_error, fallback) => fallback },
+    ArrowLeftIcon() {}, ArrowRightIcon() {}, CheckCircleIcon() {}, ClipboardDocumentListIcon() {},
+    Cog6ToothIcon() {}, MusicalNoteIcon() {}, PlusIcon() {}, ServerStackIcon() {},
+    ShieldCheckIcon() {}, TrashIcon() {}, ChatBubbleLeftRightIcon() {},
+  })
+}
+
 async function siteEditor(options) {
   const info = { label: 'Audit', templates: [], builtin: [], items: [] }
   const component = loadSetup('views/Sites.vue', [
@@ -305,4 +323,71 @@ test('tooltip position stays in a narrow viewport and flips away from its top ed
   assert.ok(Number.parseFloat(component.tooltipStyle.value.left) >= 12)
   assert.ok(Number.parseFloat(component.tooltipStyle.value.left) + 288 <= 308)
   assert.equal(Number.parseFloat(component.tooltipStyle.value.top), 35)
+})
+
+test('the configuration wizard preserves unknown fields while saving editable values', () => {
+  const component = configWizard()
+  component.configSource.value = {
+    bot: { token: 'keep-this-field' },
+    emby: { legacy_option: 'keep-this-option', account: [{ url: 'https://old.example', username: 'old', password: 'secret', time: [100, 200] }] },
+    proxy: { hostname: '127.0.0.1', port: 7890, scheme: 'http' },
+  }
+  component.syncDraft()
+  component.embyAccounts.value[0].username = 'updated'
+  component.proxy.enabled = true
+  component.proxy.hostname = 'proxy.example'
+  component.siteScopes.checkiner.push('cc')
+
+  const payload = component.buildPayload()
+  assert.equal(payload.bot.token, 'keep-this-field')
+  assert.equal(payload.emby.legacy_option, 'keep-this-option')
+  assert.equal(payload.emby.account[0].username, 'updated')
+  assert.deepEqual(payload.emby.account[0].time, [100, 200])
+  assert.equal(payload.proxy.hostname, 'proxy.example')
+  assert.deepEqual(payload.site.checkiner, ['cc'])
+})
+
+test('the configuration wizard validates required account fields without blocking navigation back', () => {
+  const component = configWizard()
+  component.activeStep.value = 1
+  component.embyAccounts.value.push({
+    raw: {}, url: '', username: '', password: '', name: '', enabled: true, use_proxy: true,
+    allow_stream: false, cf_challenge: true, allow_multiple: true, play_id: '', time_start: 300,
+    time_end: 600, interval_days: '', time_range: '', useragent: '', client: '', client_version: '',
+    device: '', device_id: '', continuous: false, advanced: false,
+  })
+  assert.equal(component.validateStep(), false)
+  component.jumpToStep(0)
+  assert.equal(component.activeStep.value, 0)
+  component.jumpToStep(4)
+  assert.equal(component.activeStep.value, 4)
+})
+
+test('the configuration wizard asks before leaving a dirty draft', () => {
+  const component = configWizard()
+  component.configSource.value = { emby: { account: [] } }
+  component.syncDraft()
+  component.initialSnapshot.value = component.draftSnapshot()
+  component.embyAccounts.value.push({
+    raw: {}, url: 'https://emby.example', username: 'user', password: 'secret', name: '', enabled: true, use_proxy: true,
+    allow_stream: false, cf_challenge: true, allow_multiple: true, play_id: '', time_start: 300,
+    time_end: 600, interval_days: '', time_range: '', useragent: '', client: '', client_version: '',
+    device: '', device_id: '', continuous: false, advanced: false,
+  })
+  assert.equal(component.canLeave(), false)
+  component.saving.value = true
+  assert.equal(component.canLeave(), false)
+})
+
+test('the configuration wizard catches incomplete notification settings before save', () => {
+  const component = configWizard()
+  component.activeStep.value = 4
+  component.notifier.enabled = true
+  component.notifier.method = 'telegram'
+  component.notifier.account = '0'
+  assert.equal(component.validateStep(), false)
+
+  component.notifier.method = 'apprise'
+  component.notifier.apprise_uri = ''
+  assert.equal(component.validateStep(), false)
 })

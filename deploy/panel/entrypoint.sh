@@ -1,11 +1,11 @@
 #!/bin/bash
-# Embykeeper 面板容器入口脚本
+# EmbyKeeperPlus 面板容器入口脚本
 #
 # 职责:
 #   1. 准备数据目录 (内含 config.toml, cache.json, 会话, 日志与面板自身状态)
 #   2. 首次运行时生成空配置文件 (等价于全部默认值, 之后可在面板中修改)
 #   3. 校验面板访问密码 EK_WEBPASS
-#   4. 启动面板 (面板会自动拉起被托管的 Embykeeper 业务后端)
+#   4. 启动面板 (面板会自动拉起被托管的 EmbyKeeperPlus 业务后端)
 
 set -e
 

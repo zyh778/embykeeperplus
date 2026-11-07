@@ -163,6 +163,16 @@ class WindowsPanelTests(unittest.TestCase):
 
 
 class DockerReleaseTests(unittest.TestCase):
+    def test_panel_compose_supports_source_build_with_renamed_container(self):
+        root = Path(__file__).resolve().parents[1]
+        compose = yaml.safe_load((root / "deploy" / "panel" / "docker-compose.yaml").read_text())
+        panel = compose["services"]["panel"]
+        self.assertEqual(panel["container_name"], "embykeeperplus-panel")
+        self.assertEqual(panel["build"]["context"], "../..")
+        self.assertEqual(panel["build"]["dockerfile"], "deploy/panel/Dockerfile")
+        self.assertEqual(panel["build"]["target"], "release")
+        self.assertEqual(panel["image"], "${EK_PANEL_IMAGE:-embykeeper/embykeeper:latest}")
+
     def test_release_and_editable_images_default_to_web(self):
         root = Path(__file__).resolve().parents[1]
         dockerfile = (root / "deploy" / "panel" / "Dockerfile").read_text()
@@ -221,7 +231,11 @@ class DockerReleaseTests(unittest.TestCase):
                 service = compose["services"]["panel"]
                 self.assertIn("embykeeper/embykeeper:latest", service["image"])
                 self.assertNotIn("command", service)
-                self.assertNotIn("build", service)
+                if name == "supplied":
+                    self.assertEqual(service["container_name"], "embykeeperplus-panel")
+                    self.assertEqual(service["build"]["context"], "../..")
+                else:
+                    self.assertNotIn("build", service)
         self.assertNotIn("git clone", guide)
         self.assertNotIn("--build", guide)
 

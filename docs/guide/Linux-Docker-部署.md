@@ -7,7 +7,7 @@
 
 ## 配置与部署
 
-Embykeeper 可以通过 `docker` 部署, 您需 [安装 docker](https://yeasy.gitbook.io/docker_practice/install), 然后执行:
+EmbyKeeperPlus 可以通过 `docker` 部署, 您需 [安装 docker](https://yeasy.gitbook.io/docker_practice/install), 然后执行:
 
 ```bash
 docker run -v $(pwd)/embykeeper:/app --rm -it --net=host embykeeper/embykeeper
@@ -17,7 +17,7 @@ docker run -v $(pwd)/embykeeper:/app --rm -it --net=host embykeeper/embykeeper
 `--net=host` 用于连接主机上的代理, 若您不需要可以不使用这个选项.
 :::
 
-命令将会在 `embykeeper` 目录下生成模板 `config.toml` 文件 (您也可以从[这里](https://github.com/emby-keeper/emby-keeper/blob/main/config.example.toml)下载).
+命令将会在 `embykeeper` 目录下生成模板 `config.toml` 文件 (您也可以从[这里](https://github.com/zyh778/embykeeperplus/blob/main/config.example.toml)下载).
 
 <!--@include: ./_简要配置.md-->
 
@@ -37,9 +37,9 @@ docker run -v $(pwd)/embykeeper:/app --rm -it --net=host embykeeper/embykeeper
 
 :::
 
-您将被询问设备验证码以登录, 登录成功后, Embykeeper 将首先执行一次签到和保活, 此后每日进行一次签到和保活.
+您将被询问设备验证码以登录, 登录成功后, EmbyKeeperPlus 将首先执行一次签到和保活, 此后每日进行一次签到和保活.
 
-恭喜您！您已经成功部署了 Embykeeper.
+恭喜您！您已经成功部署了 EmbyKeeperPlus.
 
 ::: info 支持
 
@@ -49,7 +49,7 @@ docker run -v $(pwd)/embykeeper:/app --rm -it --net=host embykeeper/embykeeper
 
 ## 后台运行
 
-为了让 Embykeeper 长期后台运行, 您可以通过 `Ctrl + C` 停止, 然后运行:
+为了让 EmbyKeeperPlus 长期后台运行, 您可以通过 `Ctrl + C` 停止, 然后运行:
 
 ```bash
 tmux
@@ -89,11 +89,11 @@ docker run -v $(pwd)/embykeeper:/app --rm -it --net=host embykeeper/embykeeper:v
 
 ## 命令行参数
 
-Embykeeper 支持多样化的 [**⌨️ 命令行参数**](/guide/命令行参数).
+EmbyKeeperPlus 支持多样化的 [**⌨️ 命令行参数**](/guide/命令行参数).
 
 <!-- #region command -->
 
-当通过 Docker 部署时, 末尾的所有参数将被传递给 Embykeeper, 例如:
+当通过 Docker 部署时, 末尾的所有参数将被传递给 EmbyKeeperPlus, 例如:
 
 ```bash
 docker run -v $(pwd)/embykeeper:/app --rm -it --net=host embykeeper/embykeeper -e
@@ -105,7 +105,7 @@ docker run -v $(pwd)/embykeeper:/app --rm -it --net=host embykeeper/embykeeper -
 
 ## 修改程序源码, 并用 Docker 运行
 
-Embykeeper 提供 `dev` 系列镜像, 您可以运行:
+EmbyKeeperPlus 提供 `dev` 系列镜像, 您可以运行:
 
 ```bash
 docker run -v $(pwd)/embykeeper-src:/src -v $(pwd)/embykeeper:/app --rm -it --net=host embykeeper/embykeeper:main-dev -i
@@ -123,4 +123,4 @@ docker run -v $(pwd)/embykeeper-src:/src -v $(pwd)/embykeeper:/app --rm -it --ne
 
 ::::
 
-欢迎您在实现签到器后, 通过 [Pull requests](https://github.com/emby-keeper/emby-keeper/pulls) 向 Embykeeper 分享你的成果.
+欢迎您在实现签到器后, 通过 [Pull requests](https://github.com/zyh778/embykeeperplus/pulls) 向 EmbyKeeperPlus 分享你的成果.

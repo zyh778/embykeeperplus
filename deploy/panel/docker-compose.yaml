@@ -1,4 +1,4 @@
-# Embykeeper 面板模式 (新版部署方式)
+# EmbyKeeperPlus 面板模式 (新版部署方式)
 #
 #   1. cp .env.example .env && vi .env    # 将 EK_WEBPASS 的 your-password 换成自己的密码
 #   2. docker compose pull && docker compose up -d
@@ -10,7 +10,11 @@
 
 services:
   panel:
-    container_name: embykeeper-panel
+    container_name: embykeeperplus-panel
+    build:
+      context: ../..
+      dockerfile: deploy/panel/Dockerfile
+      target: release
     image: ${EK_PANEL_IMAGE:-embykeeper/embykeeper:latest}
     restart: unless-stopped
     # 面板会在收到停止信号后等待被托管的业务后端退出
